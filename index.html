@@ -17,7 +17,7 @@
 			$('#download-form').on('submit', function(event) {
 				event.preventDefault();
 				var url = $('#url-input').val();
-				$.get('https://lucasid26.github.io/myprofile/raw/main/download', { url: url }, function(data) {
+				$.get('https://lucasid26.github.io/myprofile/download', { url: url }, function(data) {
 					$('#download-link').html('<a href="' + data.download_link + '">Download file</a>');
 				});
 			});
