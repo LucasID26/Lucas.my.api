@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Downloader</title>
+</head>
+<body>
+	<h1>Web Downloader</h1>
+	<form id="download-form">
+		<label for="url-input">URL:</label>
+		<input type="text" id="url-input" name="url">
+		<button type="submit">Download</button>
+	</form>
+	<div id="download-link"></div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#download-form').on('submit', function(event) {
+				event.preventDefault();
+				var url = $('#url-input').val();
+				$.get('https://lucasid26.github.io/myprofile', { url: url }, function(data) {
+					$('#download-link').html('<a href="' + data.download_link + '">Download file</a>');
+				});
+			});
+		});
+	</script>
+</body>
+</html>
